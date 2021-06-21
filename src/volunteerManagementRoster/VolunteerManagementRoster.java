@@ -319,7 +319,7 @@ public class VolunteerManagementRoster {
 				"Do you want to add this volunteer to the database?  (Y/N)  WARNING: If 'N', this entry will be permanently deleted.");
 		try (Scanner input = new Scanner(System.in)) {
 			String finalEntry = input.nextLine();
-			if (finalEntry.equals("N") || finalEntry.equals("n")) || finalEntry.equals("No")
+			if (finalEntry.equals("N") || finalEntry.equals("n") || finalEntry.equals("No")
 					|| finalEntry.equals("no")) {
 				volunteerID = (volunteerID - 1);
 				primary();
