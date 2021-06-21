@@ -319,7 +319,8 @@ public class VolunteerManagementRoster {
 				"Do you want to add this volunteer to the database?  (Y/N)  WARNING: If 'N', this entry will be permanently deleted.");
 		try (Scanner input = new Scanner(System.in)) {
 			String finalEntry = input.nextLine();
-			if (finalEntry.equals("N") || finalEntry.equals("n")) {
+			if (finalEntry.equals("N") || finalEntry.equals("n")) || finalEntry.equals("No")
+					|| finalEntry.equals("no")) {
 				volunteerID = (volunteerID - 1);
 				primary();
 			} else {
@@ -949,8 +950,8 @@ public class VolunteerManagementRoster {
 				"Do you want to remove this volunteer?  (Y/N)  WARNING: If 'Y', entry will be permanently deleted.");
 		try (Scanner input = new Scanner(System.in)) {
 			String deleteEntry = input.nextLine();
-			if (deleteEntry.equals("N") || deleteEntry.equals("n") || deleteEntry.equals("yes")
-					|| deleteEntry.equals("Yes")) {
+			if (deleteEntry.equals("N") || deleteEntry.equals("n") || deleteEntry.equals("No")
+					|| deleteEntry.equals("no")) {
 				volunteerIDEdit = 0;
 				primary();
 			} else {
