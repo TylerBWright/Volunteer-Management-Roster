@@ -616,9 +616,9 @@ public class VolunteerManagementRoster {
 				}
 				for (int i = 0; i < database.getContactsFirstName().length; i++) {
 					if ((searchAllSplit[0].equals(database.getContactsFirstName()[i])
-							& searchAllSplit[2].equals(database.getContactsLastName()[i])
-							& (searchAllSplit[5].equals(database.getContactsCity()[i])
-									& searchAllSplit[7].equals(database.getContactsZipCode()[i])))) {
+							&& searchAllSplit[2].equals(database.getContactsLastName()[i])
+							&& (searchAllSplit[5].equals(database.getContactsCity()[i])
+									&& searchAllSplit[7].equals(database.getContactsZipCode()[i])))) {
 						System.out.println("Potential match:\n");
 						System.out.println("VOLUNTEER ID: " + database.getContactsPersonId()[i] + "; FULL NAME: "
 								+ database.getContactsFirstName()[i] + " " + database.getContactsMiddleName()[i] + " "
