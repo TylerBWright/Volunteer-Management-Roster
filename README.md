@@ -9,5 +9,5 @@ This program allows you to manage volunteer information in a dynamic way, includ
 This application demonstrates general competence in core Java principles and object-oriented
 programming.
 
-*--END--*
+**--END--**
 
