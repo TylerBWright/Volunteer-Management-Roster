@@ -596,7 +596,7 @@ public class VolunteerManagementRoster {
 		}
 	}
 
-	public static void searchAll() {
+		public static void searchAll() {
 
 		System.out.println("Search All Fields");
 		System.out.println("\n------------------------------------------------------------------\n");
@@ -606,20 +606,29 @@ public class VolunteerManagementRoster {
 		System.out.println("\n------------------------------------------------------------------\n");
 		try (Scanner input = new Scanner(System.in)) {
 			String searchAll = input.nextLine();
-			String[] searchAllSplit = searchAll.split(", ");
-			for (int i = 0; i < database.getContactsFirstName().length; i++) {
-				if ((searchAllSplit[0].equals(database.getContactsFirstName()[i])
-						& searchAllSplit[2].equals(database.getContactsLastName()[i])
-						& (searchAllSplit[5].equals(database.getContactsCity()[i])
-								& searchAllSplit[7].equals(database.getContactsZipCode()[i])))) {
-					System.out.println("Potential match:\n");
-					System.out.println("VOLUNTEER ID: " + database.getContactsPersonId()[i] + "; FULL NAME: "
-							+ database.getContactsFirstName()[i] + " " + database.getContactsMiddleName()[i] + " "
-							+ database.getContactsLastName()[i] + "; " + "PHONE: "
-							+ database.getContactsPhoneNumber()[i] + "; " + "ADDRESS: "
-							+ database.getContactsAddress()[i] + ", " + database.getContactsCity()[i] + ", "
-							+ database.getContactsState()[i] + ", " + database.getContactsZipCode()[i] + "; SKILLS: "
-							+ database.getContactsSkills()[i]);
+			if (searchAll.contains(", ")) {
+				String[] searchAllSplit = searchAll.split(", ");
+				if (searchAllSplit.length > 7) {
+					System.out.println("");
+				} else {
+					System.out.println("Invalid entry.");
+					primary();
+				}
+				for (int i = 0; i < database.getContactsFirstName().length; i++) {
+					if ((searchAllSplit[0].equals(database.getContactsFirstName()[i])
+							& searchAllSplit[2].equals(database.getContactsLastName()[i])
+							& (searchAllSplit[5].equals(database.getContactsCity()[i])
+									& searchAllSplit[7].equals(database.getContactsZipCode()[i])))) {
+						System.out.println("Potential match:\n");
+						System.out.println("VOLUNTEER ID: " + database.getContactsPersonId()[i] + "; FULL NAME: "
+								+ database.getContactsFirstName()[i] + " " + database.getContactsMiddleName()[i] + " "
+								+ database.getContactsLastName()[i] + "; " + "PHONE: "
+								+ database.getContactsPhoneNumber()[i] + "; " + "ADDRESS: "
+								+ database.getContactsAddress()[i] + ", " + database.getContactsCity()[i] + ", "
+								+ database.getContactsState()[i] + ", " + database.getContactsZipCode()[i]
+								+ "; SKILLS: " + database.getContactsSkills()[i]);
+						select();
+					}
 				}
 			}
 			select();
